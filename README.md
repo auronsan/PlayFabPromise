@@ -15,10 +15,11 @@ help intergrate playfab with clean structure with await promise
 import { PlayFabAdmin } from 'playfab-sdk';
 const PlayFabPromise = require("playfab-promise")
 
-
-const catalogItems = await PlayFabPromise(PlayFabAdmin.GetCatalogItems, { CatalogVersion: 'v1' });
-
-console.log(catalogItems)
-
+try {
+  const catalogItems = await PlayFabPromise(PlayFabAdmin.GetCatalogItems, { CatalogVersion: 'v1' });
+  console.log(catalogItems)
+} catch(e) {
+  console.log(e)
+}
 
 ```
