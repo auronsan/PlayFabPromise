@@ -1,13 +1,17 @@
 
 const PlayFabPromise = async (func, payload) => {
   return await new Promise((resolve, reject) =>
-    func(payload, (err, { data }) => {
+    func(payload, (err, data) => {
       if (err) {
         reject(err);
         return;
       }
-      resolve(data);
-      return data;
+      if(!data) {
+        resolve(null);
+        return null
+      }
+      resolve(data.data);
+      return data.data;
     }),
   );
 };
