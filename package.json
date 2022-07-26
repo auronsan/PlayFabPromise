@@ -1,5 +1,5 @@
 {
-  "name": "play-fab-promise",
+  "name": "playfab-promise",
   "version": "0.0.1",
   "description": "simple wrapper promise for used playFab node SDK",
   "main": "dist/index.js",
