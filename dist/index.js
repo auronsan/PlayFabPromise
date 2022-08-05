@@ -9,18 +9,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const PlayFabPromise = (func, payload) => __awaiter(void 0, void 0, void 0, function* () {
-    return yield new Promise((resolve, reject) => func(payload, (err, data) => {
-        if (err) {
-            reject(err);
-            return;
-        }
-        if (!data) {
-            resolve(null);
-            return null;
-        }
-        resolve(data.data);
-        return data.data;
-    }));
-});
+function PlayFabPromise(func, payload) {
+    return __awaiter(this, void 0, void 0, function* () {
+        return yield new Promise((resolve, reject) => func(payload, (err, data) => {
+            if (err) {
+                reject(err);
+                return;
+            }
+            if (!data) {
+                resolve(null);
+                return null;
+            }
+            resolve(data.data);
+            return data.data;
+        }));
+    });
+}
 exports.default = PlayFabPromise;

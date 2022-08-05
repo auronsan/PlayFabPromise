@@ -1,2 +1,2 @@
-declare const PlayFabPromise: (func: any, payload: any) => Promise<unknown>;
+declare function PlayFabPromise<PlayfabFunc, PlayfabPayload>(func: PlayfabFunc, payload: PlayfabPayload): Promise<any>;
 export default PlayFabPromise;
